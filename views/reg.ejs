@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %> About</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+
+    <!-- Links for semantic ui -->
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.js"></script>
+</head>
+
+<body>
+
+<header></header>
+
+<!-- include pre-made header and nav from nav.ejs -->
+<% include templates/nav.ejs %>
+<br/>
+
+<!-- TODO
+Cards will need to be auto generated after data is received
+Just some examples below
+-->
+<div class="ui container">
+    <div class="ui top attached segment">
+        <div class="ui top attached label">
+            <h1 class="ui large header">Registration</h1>
+        </div>
+
+        <!--Loop through error and print alert if any errors present -->
+        <% if(error.msg != "") { %>
+            <% error.forEach(function(item){ %>
+                <% console.log(item); %>
+                <div class="ui negative message">
+                    <i class="close icon"></i>
+                    <div class="header">
+                        <%= item.msg %>
+                    </div>
+                </div>
+            <% }); %>
+        <% }else{
+        } %>
+
+        <br/>
+        <div class=" ui  raised segment">
+            <h1 class="ui medium header ">Your details</h1><br/>
+            <form method="post" action="/users/reg" class="ui form" enctype="multipart/form-data">
+                <div class="field">
+                    <label>UserName</label>
+                    <input type="text" name="username" placeholder="Choose a unique UserName">
+                </div>
+                <div class="field">
+                    <label>E-mail</label>
+                    <input type="email" name="email" placeholder="Your E-Mail">
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Your Password">
+                </div>
+                <div class="field">
+                    <label>Confirm Password</label>
+                    <input type="password" name="password2" placeholder="Confirm Password">
+                </div>
+                <div class="field">
+                    <label>Upload a image for your profile</label>
+                    <input type="file" name="profile">
+                </div>
+                <button type="submit" class="ui  big inverted red button" value="register">Register</button>
+                <br/>
+                <br/>
+            </form>
+        </div>
+
+        <% include templates/footer.ejs %>
+
+    </div>
+</body>
+</html>

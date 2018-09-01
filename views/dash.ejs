@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %> About</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+
+    <!-- Links for semantic ui -->
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.js"></script>
+</head>
+
+<body>
+
+<header></header>
+
+<!-- include pre-made header and nav from nav.ejs -->
+<% include templates/nav.ejs %>
+<br/>
+
+
+<div class="ui container">
+    <div class="ui top attached segment">
+        <div class="ui top attached label">
+            <% var  number = 0%>
+            <h1 class="ui large header">Links </h1>
+        </div>
+
+        <!-- TODO
+        Cards will need to be auto generated after data is received
+        Just some examples below
+        -->
+        <div class="ui cards">
+
+
+            <% linkData.links.forEach(function (item) { %>
+                <% number  ++%>
+
+
+
+                <div class="ui  centered card">
+                <div class="image">
+
+                    <img src="<%= item.picPath  %>">
+                </div>
+                <div class="content">
+                    <div class="header">
+                        <%= item.categoryName %>
+                    </div>
+
+                    <div class="description">
+                        <%= item.categoryDescription  %>
+                    </div>
+                </div>
+                <div class="extra content">
+                    <div class="ui two buttons">
+                        <!-- TODO
+                        make buttons work -->
+                        <a  href="<%= item.link %>"> <button onclick= "" class= "ui inverted green button">View Link</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <% }); %>
+        </div>
+        <hr/>
+        <h3>Number  of Links <%= number%> </h3>
+
+    </div>
+        <% include templates/footer.ejs %>
+
+
+    </div>
+</body>
+</html>

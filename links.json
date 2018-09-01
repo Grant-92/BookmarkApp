@@ -1,0 +1,39 @@
+{
+  "links": [
+    {
+      "categoryID": "01",
+      "categoryName": "JavaScript",
+      "categoryDescription": "Handy Link and resource to learn Javascript.",
+      "picPath": "/images/js.png",
+      "link":  "https://www.w3schools.com/js/"
+    },
+    {
+      "categoryID": "02",
+      "categoryName": "NodeJS",
+      "categoryDescription": "Handy Link and resource to learn NodeJS.",
+      "picPath": "/images/node.png",
+      "link": "https://www.w3schools.com/nodejs/"
+    },
+    {
+      "categoryID": "03",
+      "categoryName": "Semantic UI",
+      "categoryDescription": "Handy Link and resource to learn about semantic UI a CSS framework.",
+      "picPath": "/images/sem.png",
+      "link": "https://semantic-ui.com/"
+    },
+    {
+      "categoryID": "04",
+      "categoryName": "Java",
+      "categoryDescription": "Link to Java related things",
+      "picPath": "/images/java.jpg",
+      "link": "https://www.tutorialspoint.com/java/"
+    },
+    {
+      "categoryID": "05",
+      "categoryName": "Python",
+      "categoryDescription": "Python 3 related link",
+      "picPath": "/images/py.jpg",
+      "link": "https://www.python.org/"
+    }
+  ]
+}

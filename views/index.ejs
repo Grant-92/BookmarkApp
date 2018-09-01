@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %> Home</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+
+
+    <!-- Links for semantic ui -->
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.js"></script>
+</head>
+
+<body>
+
+<% include templates/nav.ejs %>
+<!--  display succcess msgs  -->
+<%if(success_msg == null || success_msg == ""){%>
+
+<%}else{%>
+    <div class="ui container">
+        <div class="ui positive message">
+            <i class="close icon"></i>
+            <div class="header">
+                <%= success_msg %>
+            </div>
+        </div>
+    </div>
+<%}%>
+<!--  display error msgs  -->
+<%if(error_msg == null || error_msg == ""){%>
+
+<%}else{%>
+    <div class="ui container">
+        <div class="ui negative message">
+            <i class="close icon"></i>
+            <div class="header">
+                <%= error_msg %>
+            </div>
+        </div>
+    </div>
+<%}%>
+
+<div class="ui container">
+    <section id="homesec" class="ui raised center aligned middle aligned two column grid segment">
+        <!-- col 1 content -->
+        <div class="column">
+            <h1 class="ui huge header "><%= title %></h1>
+            <p>Welcome to <%= title %></p>
+            <p> <%= title %> is a web app designed to allow easy storage and management of your favourite site bookmarks
+                across all devices.
+                Allowing for easy sharing and reference when at home or away from you home devices. </p>
+        </div>
+        <!-- col 2 content -->
+        <div class="column">
+            <div class=" ui raised segment">
+                <h1 class="ui medium header ">Sign In</h1>
+                <form method="post" action="/users/dash" class="ui form">   <!-- TODO Adjust this when needed -->
+                    <div class="field">
+                        <label>UserName</label>
+                        <input type="text" name="username" placeholder="Your UserName">
+                    </div>
+                    <div class="field">
+                        <label>Password</label>
+                        <input type="password" name="password" placeholder="Your Password">
+                    </div>
+                    <button type="submit" class="ui  big inverted red button" value="login">Sign-In</button>
+                    <br/>
+                    <br/>
+                </form>
+
+                <a href="/users/reg" class="ui large inverted blue button">Register</a> <!-- TODO -->
+
+            </div>
+        </div>
+    </section>
+    <% include templates/footer.ejs %>
+</div>
+</body>
+</html>
